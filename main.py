@@ -138,11 +138,17 @@ def main():
 
     args = parser.parse_args()
 
-    if args.command == "analyze":
-        analyze_command(args.project)
+    try:
+        if args.command == "analyze":
+            analyze_command(args.project)
 
-    elif args.command == "search":
-        search_command(args.project, args.keyword)
+        elif args.command == "search":
+            search_command(args.project, args.keyword)
+
+    except (FileNotFoundError, NotADirectoryError) as error:
+        print()
+        print(f"Error: {error}")
+        print()
 
 
 if __name__ == "__main__":
