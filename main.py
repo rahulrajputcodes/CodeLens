@@ -80,6 +80,9 @@ def search_command(project_path, keyword):
     # Search all supported files for the keyword.
     results = search_project(files, keyword)
 
+    print("Files searched:", len(files))
+    print()
+
     if not results:
         print("No matches found.")
         return
