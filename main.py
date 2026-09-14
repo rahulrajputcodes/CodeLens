@@ -144,6 +144,11 @@ def main():
 
     args = parser.parse_args()
 
+    # Show the help message when no command is provided.
+    if args.command is None:
+        parser.print_help()
+        return
+
     try:
         if args.command == "analyze":
             analyze_command(args.project)
