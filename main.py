@@ -104,9 +104,15 @@ def main():
         description="CodeLens - Python Codebase Intelligence CLI"
     )
 
+    # Display the current CodeLens version.
+    parser.add_argument(
+        "--version",
+        action="version",
+        version="CodeLens 1.0.0",
+    )
+
     subparsers = parser.add_subparsers(
         dest="command",
-        required=True,
     )
 
     # Analyze command.
